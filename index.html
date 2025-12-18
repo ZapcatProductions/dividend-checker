@@ -135,8 +135,8 @@
       }
 
       try {
-        // Replace YOUR_USERNAME and YOUR_REPO with your actual GitHub username/repo
-        const response = await fetch("https://raw.githubusercontent.com/Zapcatproductions/dividend-checker/main/dividends.csv");
+        // Your GitHub raw CSV link
+        const response = await fetch("https://raw.githubusercontent.com/ZapcatProductions/dividend-checker/refs/heads/main/dividends.csv");
         const data = await response.text();
         const rows = data.split("\n").slice(1); // skip header
         let found = false;
@@ -172,3 +172,4 @@
   </script>
 </body>
 </html>
+
