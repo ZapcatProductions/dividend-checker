@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dividend Date Checker</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f1220;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #181c34;
+      padding: 30px;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+      color: #b9c0ff;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: #d6dbff;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 16px;
+      font-size: 15px;
+      background: #22275a;
+      color: #ffffff;
+    }
+
+    input::placeholder {
+      color: #9aa3ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(135deg, #6a7cff, #4e5cff);
+      color: #ffffff;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .result {
+      margin-top: 22px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #111433;
+      font-size: 14px;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .result span {
+      color: #7cffb2;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 11px;
+      color: #8890ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Dividend Date Checker</h1>
+    <p>Check the next dividend date for Trading212 stocks</p>
+
+    <label for="ticker">Stock ticker</label>
+    <input id="ticker" type="text" placeholder="e.g. AAPL" />
+
+    <label for="shares">Number of shares</label>
+    <input id="shares" type="number" placeholder="e.g. 25" />
+
+    <button onclick="showPlaceholder()">Check next dividend</button>
+
+    <div id="result" class="result">
+      <div>Stock: <span id="rTicker">AAPL</span></div>
+      <div>Shares owned: <span id="rShares">25</span></div>
+      <div>Next dividend date: <span>Coming soon</span></div>
+    </div>
+
+    <footer>
+      Dividend information is for reference only.
+    </footer>
+  </div>
+
+  <script>
+    function showPlaceholder() {
+      const ticker = document.getElementById("ticker").value || "—";
+      const shares = document.getElementById("shares").value || "—";
+
+      document.getElementById("rTicker").textContent = ticker.toUpperCase();
+      document.getElementById("rShares").textContent = shares;
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>
